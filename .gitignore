@@ -1,0 +1,8 @@
+.DS_Store
+target/
+.idea/
+/APDescription.txt
+/MTPs-Main-Container.txt
+errors.txt
+log.txt
+log.txt.lck
