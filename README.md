@@ -14,3 +14,6 @@ mvn package -Dmaven.wagon.http.ssl.insecure=true
 Данная версия программы ничего не делает
 Появление окна означает, что все ок, программа работает
 Работает оценка заказа на этапе инициализации
+
+Обновление 25 марта: 
+add CustomerAgent impl (HEAD -> master); add ProductAgent impl; add EquipAgent args
