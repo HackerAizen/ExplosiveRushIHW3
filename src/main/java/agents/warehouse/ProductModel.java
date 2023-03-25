@@ -9,29 +9,29 @@ import java.util.Objects;
 @Data
 public class ProductModel {
     @JsonProperty("prod_item_id")
-    int id;
+    private int id;
 
     @JsonProperty("prod_item_type ")
-    int typeId;
+    private int typeId;
 
     @JsonProperty("prod_item_name")
-    String name;
+    private String name;
 
     @JsonProperty("prod_item_company")
-    String company;
+    private String company;
 
     @JsonProperty("prod_item_unit")
-    String unitName;
+    private String unitName;
 
     @JsonProperty("prod_item_quantity")
-    double quantity;
+    private double quantity;
 
     @JsonProperty("prod_item_cost")
-    int cost;
+    private int cost;
 
     @JsonProperty("prod_item_delivered")
-    Date deliveredAt;
+    private Date deliveredAt;
 
     @JsonProperty("prod_item_valid_until")
-    Date expirationDate;
+    private Date expirationDate;
 }

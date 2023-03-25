@@ -6,11 +6,11 @@ import lombok.Data;
 @Data
 public class EquipModel {
     @JsonProperty("equip_type")
-    int equipTypeId;
+    private int equipTypeId;
 
     @JsonProperty("equip_name")
-    String equipName;
+    private String equipName;
 
     @JsonProperty("equip_active")
-    boolean active;
+    private boolean active;
 }

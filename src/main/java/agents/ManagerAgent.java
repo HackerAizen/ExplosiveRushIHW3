@@ -86,16 +86,25 @@ public class ManagerAgent extends Agent {
         customers = new LinkedList<>(JsonIO.readFromFile("visitors_orders.txt", InputCustomersFileModel.class)
                 .getCustomers());
 
+        List<AID> productAgents = this.products.values()
+                .stream()
+                .map(product -> spawnActor(product.getName(), "agents.warehouse.ProductAgent", "Product", new Object[] {product}))
+                .collect(Collectors.toList());
+
         List<AID> equipAgents = this.equipment
                 .stream()
-                .map(equip -> spawnActor(equip.getEquipName(), "agents.warehouse.EquipAgent", "Equip", new Object[] {}))
+                .map(equip -> spawnActor(equip.getEquipName(), "agents.warehouse.EquipAgent", "Equip", new Object[] {equip}))
                 .collect(Collectors.toList());
 
         List<AID> cookAgents = this.cookers.values()
                 .stream()
                 .map(cook -> spawnActor(cook.getName(), "agents.cook.CookAgent", "Cooker", new Object[]{cook}))
                 .collect(Collectors.toList());
-        logger.log(Level.INFO, cookAgents.toString());
+
+        List<AID> customerAgents = this.customers
+                .stream()
+                .map(customer -> spawnActor(customer.getName(), "agents.customer.CustomerAgent", "Customer", new Object[] {customer}))
+                .collect(Collectors.toList());
 
         addBehaviour(new AcceptCustomerBehaviour(this));
     }
